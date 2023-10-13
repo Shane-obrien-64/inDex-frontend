@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "../../logo.svg";
+import gitLogo from "../../images/github_logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="">
+        <img src={logo}></img>
+        <nav>
+          <a>home</a>
+          <a>about</a>
+        </nav>
       </header>
+      <main>
+        <h1>Welcome to inDex!</h1>
+        <p>Just type in your favorite Pokemon and hit search!</p>
+        <input type="text"></input>
+        <button>go!</button>
+      </main>
+      <footer>
+        <p>Developed by Shane O'Brien 2023</p>
+        <div>
+          <img src={gitLogo} />
+          <a href="https://github.com/Shane-obrien-64">GitHub</a>
+        </div>
+      </footer>
     </div>
   );
 }
