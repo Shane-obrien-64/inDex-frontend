@@ -1,6 +1,10 @@
 import "./Main.css";
 
 const Main = () => {
+  //   function getRandomNumber() {
+  //     return Math.floor(Math.random() * (30 - 1 + 1)) + 1;
+  //   }
+
   return (
     <main className="main">
       <h1 className="main__heading">Welcome to inDex!</h1>
@@ -13,7 +17,6 @@ const Main = () => {
           go!
         </button>
       </form>
-      <p></p>
     </main>
   );
 };
