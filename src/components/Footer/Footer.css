@@ -1,0 +1,30 @@
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  padding: 50px 10px;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__author {
+  margin: 0;
+}
+
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__link {
+  text-decoration: none;
+}
+
+.footer__link-icon {
+  height: 30px;
+  width: 30px;
+  margin: auto 10px;
+  vertical-align: middle;
+}
