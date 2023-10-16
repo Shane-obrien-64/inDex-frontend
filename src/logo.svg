@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <!-- Background Circle -->
-  <circle cx="100" cy="100" r="90" fill="#141E46" />
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="150" viewBox="0 0 300 150">
+  <!-- Red Rectangle Background -->
+  <rect x="20" y="20" width="260" height="110" rx="20" ry="20" fill="#C70039" />
 
-  <!-- Letter "i" -->
-  <text x="70" y="130" font-family="Arial" font-size="100" fill="#FFF5E0">i</text>
-
-  <!-- Letter "D" -->
-  <text x="90" y="130" font-family="Arial" font-size="100" fill="#FFF5E0">D</text>
+  <!-- Text "inDex" in the center -->
+  <text x="150" y="75" font-family="Arial" font-size="36" fill="white" text-anchor="middle" dominant-baseline="middle">inDex</text>
 </svg>
+
+
+<!-- C70039 -->

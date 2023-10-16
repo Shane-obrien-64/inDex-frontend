@@ -1,17 +1,34 @@
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
+import Entry from "../Entry/Entry";
 import getPokemon from "../../utils/api";
+import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  getPokemon(395).then((res) => console.log(res));
+  const [poke, setPoke] = useState({});
+
+  useEffect(() => {
+    getPokemon(395)
+      .then((res) => {
+        setPoke(res);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  console.log(poke);
+
   return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <CurrentPokeContext.Provider value={{ poke, setPoke }}>
+      <div className="App">
+        <Header />
+        <Entry />
+        <Main />
+        <Footer />
+      </div>
+    </CurrentPokeContext.Provider>
   );
 }
 

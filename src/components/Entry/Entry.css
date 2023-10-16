@@ -1,0 +1,41 @@
+.entry {
+  display: grid;
+  grid-template-columns: repeat(2, 3fr);
+  grid-template-rows: repeat(5, 1fr);
+  margin: 100px;
+}
+
+.entry__grid-item {
+  border: 1px solid #c70039;
+  text-align: center;
+  padding: 20px;
+}
+
+.entry__title {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.entry__sprites {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 3;
+}
+
+.entry__types {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+.entry__hw {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.entry__abilities {
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+}
+
+.entry__stats {
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 1;
+}
