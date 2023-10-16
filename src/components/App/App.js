@@ -11,14 +11,12 @@ function App() {
   const [poke, setPoke] = useState({});
 
   useEffect(() => {
-    getPokemon(395)
+    getPokemon(71)
       .then((res) => {
         setPoke(res);
       })
       .catch((err) => console.error(err));
   }, []);
-
-  console.log(poke);
 
   return (
     <CurrentPokeContext.Provider value={{ poke, setPoke }}>

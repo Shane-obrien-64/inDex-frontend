@@ -1,31 +1,49 @@
 import { useContext } from "react";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
+import types from "../../utils/consts";
 import "./Entry.css";
 
 const Entry = () => {
   const { poke } = useContext(CurrentPokeContext);
   console.log(poke);
 
+  const getTotalStats = () => {
+    let total = 0;
+    poke.stats.forEach((stat) => {
+      total += stat.base_stat;
+    });
+    return total;
+  };
+
+  const capitalizeWord = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  };
+
+  console.log(types);
+
   return (
     <div className="entry">
       <div className="entry__grid-item entry__title">
-        <h1>{poke.name}</h1>
-        <p>Pokedex #{poke.id}</p>
+        <h1 className="entry__title-name">{capitalizeWord(poke.name)}</h1>
+        <p className="entry__title-number">#{poke.id}</p>
       </div>
       <div className="entry__grid-item entry__sprites">
-        <img src={poke.sprites.front_default} alt={poke.name} />
-        <img src={poke.sprites.front_shiny} alt={poke.name + " Shiny"} />
+        <img
+          className="entry__sprite"
+          src={poke.sprites.front_default}
+          alt={poke.name}
+        />
+        <img
+          className="entry__sprite"
+          src={poke.sprites.front_shiny}
+          alt={poke.name + " Shiny"}
+        />
       </div>
       <div className="entry__grid-item entry__types">
         <label>Types</label>
-        <p>{poke.types[0].type.name}</p>
-        <p>{poke.types[1].type.name}</p>
-      </div>
-      <div className="entry__grid-item entry__hw">
-        <p>
-          Height: {poke.height * 0.1}m / {poke.height * 0.1 * 3.28084}ft
-        </p>
-        <p>Weight: {poke.weight * 0.1}kg</p>
+        {/* {poke.types.map((type) => {
+          return <img src={types[0].url} alt={type.type.name} />;
+        })} */}
       </div>
       <div className="entry__grid-item entry__abilities">
         <label>abilities</label>
@@ -36,14 +54,23 @@ const Entry = () => {
           return <p>{ability.ability.name}</p>;
         })}
       </div>
+      <div className="entry__grid-item entry__hw">
+        <p>Height: {poke.height * 0.1}m</p>
+        <p>Weight: {poke.weight * 0.1}kg</p>
+      </div>
 
       <div className="entry__grid-item entry__stats">
-        <label>Base Stats</label>
-        <ul>
+        <h2 className="entry__stats-label">Base stats:</h2>
+        <ul className="entry__stats-list">
+          <li className="entry__stat">
+            <div>Total:</div>
+            <div>{getTotalStats()}</div>
+          </li>
           {poke.stats.map((stat) => {
             return (
-              <li>
-                {stat.stat.name}: {stat.base_stat}
+              <li className="entry__stat">
+                <div>{stat.stat.name}:</div>
+                <div>{stat.base_stat}</div>
               </li>
             );
           })}
