@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
-import types from "../../utils/consts";
+import typeList from "../../utils/consts";
 import "./Entry.css";
 
 const Entry = () => {
@@ -19,14 +19,13 @@ const Entry = () => {
     return word.charAt(0).toUpperCase() + word.slice(1);
   };
 
-  console.log(types);
-
   return (
     <div className="entry">
       <div className="entry__grid-item entry__title">
         <h1 className="entry__title-name">{capitalizeWord(poke.name)}</h1>
         <p className="entry__title-number">#{poke.id}</p>
       </div>
+
       <div className="entry__grid-item entry__sprites">
         <img
           className="entry__sprite"
@@ -39,24 +38,39 @@ const Entry = () => {
           alt={poke.name + " Shiny"}
         />
       </div>
+
       <div className="entry__grid-item entry__types">
-        <label>Types</label>
-        {/* {poke.types.map((type) => {
-          return <img src={types[0].url} alt={type.type.name} />;
-        })} */}
-      </div>
-      <div className="entry__grid-item entry__abilities">
-        <label>abilities</label>
-        {poke.abilities.map((ability) => {
-          if (ability.is_hidden === true) {
-            return <p>Hidden: {ability.ability.name}</p>;
+        {poke.types.map((type) => {
+          const typeMatch = typeList.find(
+            (item) => item.name === type.type.name
+          );
+          if (typeMatch) {
+            return (
+              <img
+                className="entry__type-img"
+                src={typeMatch.url}
+                alt={typeMatch.name}
+              />
+            );
           }
-          return <p>{ability.ability.name}</p>;
         })}
       </div>
+
+      <div className="entry__grid-item entry__abilities">
+        <p>Abilities:</p>
+        <div>
+          {poke.abilities.map((ability) => {
+            if (ability.is_hidden === true) {
+              return <p>Hidden: {ability.ability.name}</p>;
+            }
+            return <p>{ability.ability.name}</p>;
+          })}
+        </div>
+      </div>
+
       <div className="entry__grid-item entry__hw">
-        <p>Height: {poke.height * 0.1}m</p>
-        <p>Weight: {poke.weight * 0.1}kg</p>
+        <p>Height: {poke.height / 10}m</p>
+        <p>Weight: {poke.weight / 10}kg</p>
       </div>
 
       <div className="entry__grid-item entry__stats">
