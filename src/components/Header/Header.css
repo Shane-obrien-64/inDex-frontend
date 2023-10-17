@@ -11,3 +11,8 @@
   height: 60px;
   width: 90px;
 }
+
+.header__divider {
+  display: flex;
+  align-items: center;
+}

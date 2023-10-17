@@ -10,20 +10,3 @@
 .main__text {
   margin-bottom: 60px;
 }
-
-.main__search-bar {
-  width: 400px;
-  height: 50px;
-  border-radius: 10px 0 0 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #fafafa;
-}
-
-.main__btn {
-  background-color: #c70039;
-  width: 40px;
-  height: 54px;
-  border-radius: 0 10px 10px 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #fff;
-}

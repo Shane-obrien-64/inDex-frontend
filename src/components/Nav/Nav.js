@@ -1,10 +1,14 @@
 import "./Nav.css";
 
-const Nav = () => {
+const Nav = ({ handleRandom, handleMainPage }) => {
   return (
-    <nav className="nav">
-      <a className="nav__link">Home</a>
-      <a className="nav__link">Random</a>
+    <nav onClick={handleMainPage} className="nav">
+      <button className="nav__link" type="button">
+        Home
+      </button>
+      <button onClick={handleRandom} className="nav__link" type="button">
+        Random
+      </button>
     </nav>
   );
 };

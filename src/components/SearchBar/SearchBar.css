@@ -1,0 +1,22 @@
+.search-bar {
+  margin-left: 25px;
+}
+
+.search-bar__input {
+  font-family: "Trebuchet MS";
+  width: 200px;
+  height: 30px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+}
+
+.search-bar__btn {
+  font-family: "Trebuchet MS";
+  background-color: #c70039;
+  width: 40px;
+  height: 34px;
+  border-radius: 0 10px 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+}

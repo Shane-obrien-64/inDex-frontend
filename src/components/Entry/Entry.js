@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
+import { useParams } from "react-router-dom";
+
+import getPokemon from "../../utils/api";
 import typeList from "../../utils/consts";
+import { useEffect, useState } from "react";
 import "./Entry.css";
 
 const Entry = () => {
   const { poke } = useContext(CurrentPokeContext);
-  console.log(poke);
 
   const getTotalStats = () => {
     let total = 0;
@@ -32,11 +35,13 @@ const Entry = () => {
           src={poke.sprites.front_default}
           alt={poke.name}
         />
-        <img
-          className="entry__sprite"
-          src={poke.sprites.front_shiny}
-          alt={poke.name + " Shiny"}
-        />
+        {poke.sprites.front_shiny !== null ? (
+          <img
+            className="entry__sprite"
+            src={poke.sprites.front_shiny}
+            alt={poke.name + " Shiny"}
+          />
+        ) : null}
       </div>
 
       <div className="entry__grid-item entry__types">

@@ -2,8 +2,21 @@
   display: flex;
   justify-content: space-between;
   gap: 25px;
-  margin: 0 10px;
+  margin: 0;
+}
+
+.nav__link {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #c70039;
+  cursor: pointer;
   font-size: 18px;
   font-weight: 700;
-  color: #c70039;
+  background-color: #fff;
+  border: none;
+}
+
+.nav__link:hover {
+  color: rgba(99, 0, 57, 0.5);
 }
