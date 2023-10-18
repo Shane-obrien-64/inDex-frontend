@@ -6,12 +6,12 @@ const SearchBar = ({ handleSearchSubmit }) => {
 
   const handleInputChange = (e) => {
     setPokeId(e.target.value);
-    console.log(pokeId);
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
     handleSearchSubmit(pokeId);
+    setPokeId("");
   };
   return (
     <form className="search-bar" onSubmit={handleSearch}>

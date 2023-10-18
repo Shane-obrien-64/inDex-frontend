@@ -10,7 +10,7 @@
 
 .entry__grid-item {
   border: 1px solid #c70039;
-  padding: 20px;
+  padding: 10px;
   border-radius: 3px;
   background-color: #c70039;
   color: #fff;
@@ -39,6 +39,12 @@
   justify-content: center;
 }
 
+.entry__sprite {
+  margin: auto;
+  height: 150px;
+  width: 150px;
+}
+
 .entry__types {
   grid-column: 1 / span 6;
   grid-row: 4 / span 1;
@@ -47,8 +53,9 @@
 }
 
 .entry__type-img {
-  width: 20%;
-  margin: 20px;
+  width: 50px;
+  height: 25px;
+  margin: auto;
 }
 
 .entry__hw {
@@ -59,6 +66,11 @@
 .entry__abilities {
   grid-column: 1 / span 6;
   grid-row: 5 / span 1;
+}
+
+.entry__abilities_title {
+  margin: 0;
+  padding: 0;
 }
 
 .entry__stats {
@@ -83,4 +95,44 @@
 
 .entry__stat {
   font-size: 18px;
+  text-wrap: wrap;
+}
+
+@media screen and (max-width: 550px) {
+  .entry {
+    max-width: 400px;
+    max-height: 560px;
+  }
+
+  .entry__sprite {
+    margin: auto;
+    max-height: 100px;
+    max-width: 100px;
+  }
+
+  .entry__type-img {
+    width: 40px;
+    height: 20px;
+    margin: auto;
+  }
+
+  .entry__stat {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .entry {
+    margin: 50px auto;
+    max-width: 310px;
+    max-height: 560px;
+  }
+
+  .entry__stats-label {
+    font-size: 16px;
+  }
+
+  .entry__stat {
+    font-size: 14px;
+  }
 }

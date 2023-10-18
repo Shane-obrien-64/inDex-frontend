@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
 import { useParams } from "react-router-dom";
-
 import getPokemon from "../../utils/api";
 import typeList from "../../utils/consts";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Entry.css";
 
 const Entry = () => {
-  const { poke } = useContext(CurrentPokeContext);
+  const { poke, setPoke } = useContext(CurrentPokeContext);
+  const { id } = useParams();
 
   const getTotalStats = () => {
     let total = 0;
@@ -21,6 +22,16 @@ const Entry = () => {
   const capitalizeWord = (word) => {
     return word.charAt(0).toUpperCase() + word.slice(1);
   };
+
+  useEffect(() => {
+    getPokemon(id)
+      .then((res) => {
+        setPoke(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [id]);
 
   return (
     <div className="entry">
@@ -55,6 +66,7 @@ const Entry = () => {
                 className="entry__type-img"
                 src={typeMatch.url}
                 alt={typeMatch.name}
+                key={typeMatch.name}
               />
             );
           }
@@ -62,13 +74,19 @@ const Entry = () => {
       </div>
 
       <div className="entry__grid-item entry__abilities">
-        <p>Abilities:</p>
+        <h3 className="entry__abilities_title">Abilities:</h3>
         <div>
           {poke.abilities.map((ability) => {
             if (ability.is_hidden === true) {
-              return <p>Hidden: {ability.ability.name}</p>;
+              return (
+                <p key={ability.ability.name}>Hidden: {ability.ability.name}</p>
+              );
             }
-            return <p>{ability.ability.name}</p>;
+            return (
+              <p key={"hidden: " + ability.ability.name}>
+                {ability.ability.name}
+              </p>
+            );
           })}
         </div>
       </div>
@@ -87,7 +105,7 @@ const Entry = () => {
           </li>
           {poke.stats.map((stat) => {
             return (
-              <li className="entry__stat">
+              <li className="entry__stat" key={stat.stat.name}>
                 <div>{stat.stat.name}:</div>
                 <div>{stat.base_stat}</div>
               </li>

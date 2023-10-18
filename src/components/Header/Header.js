@@ -10,7 +10,6 @@ import "./Header.css";
 const Header = () => {
   const { poke, setPoke } = useContext(CurrentPokeContext);
   const navigate = useNavigate();
-  console.log(poke);
 
   const handleGetPokemon = (value) => {
     getPokemon(value)
@@ -18,28 +17,28 @@ const Header = () => {
         setPoke(res);
       })
       .then(() => {
-        console.log(poke);
-        navigate("/entry");
+        navigate(`/entry/${value}`);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        navigate("/error404");
+      });
   };
 
   const handleSearchSubmit = (value) => {
-    handleGetPokemon(value);
+    const id = value.toLowerCase();
+    handleGetPokemon(id);
   };
 
   const handleRandom = () => {
     const random = Math.random();
     const randomNumber = Math.floor(random * 1009) + 1;
-    console.log(randomNumber);
     handleGetPokemon(randomNumber);
   };
 
   const handleMainPage = () => {
     navigate("/");
   };
-
-  // handleRandom();
 
   return (
     <header className="header">

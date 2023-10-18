@@ -4,6 +4,7 @@
 
 .search-bar__input {
   font-family: "Trebuchet MS";
+  font-weight: 700;
   width: 200px;
   height: 30px;
   border-radius: 10px 0 0 10px;
@@ -19,4 +20,15 @@
   border-radius: 0 10px 10px 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #fff;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 650px) {
+  .search-bar {
+    margin: 0;
+  }
+
+  .search-bar__input {
+    width: 120px;
+  }
 }
