@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <img className="header__logo" src={logo}></img>
+      <img className="header__logo" src={logo} onClick={handleMainPage}></img>
       <div className="header__divider">
         <Nav handleRandom={handleRandom} handleMainPage={handleMainPage} />
         <SearchBar handleSearchSubmit={handleSearchSubmit} />

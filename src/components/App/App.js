@@ -3,6 +3,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Entry from "../Entry/Entry";
 import NotFound from "../NotFound/NotFound";
+
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
