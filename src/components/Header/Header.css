@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
   .header__divider {
     display: flex;
     flex-direction: column;

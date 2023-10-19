@@ -26,8 +26,6 @@ const Entry = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect fire");
-    console.log(id);
     getPokemon(id)
       .then((res) => {
         setPoke(res);

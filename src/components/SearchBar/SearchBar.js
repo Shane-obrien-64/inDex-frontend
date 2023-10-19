@@ -9,6 +9,9 @@ const SearchBar = ({ handleSearchSubmit }) => {
   };
 
   const handleSearch = (e) => {
+    if (pokeId === "") {
+      return;
+    }
     e.preventDefault();
     handleSearchSubmit(pokeId);
     setPokeId("");

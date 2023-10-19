@@ -14,10 +14,8 @@ const Header = () => {
   const handleGetPokemon = (value) => {
     getPokemon(value)
       .then((res) => {
-        setPoke(res);
-      })
-      .then(() => {
         navigate(`/entry/${value}`);
+        setPoke(res);
       })
       .catch((err) => {
         console.error(err);

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <p className="footer__author">Developed by Shane O'Brien 2023</p>
       <ul className="footer__links">
-        <li>
+        <li className="footer__list-item">
           <img className="footer__link-icon" src={gitLogo} />
           <a className="footer__link" href="https://github.com/Shane-obrien-64">
             GitHub

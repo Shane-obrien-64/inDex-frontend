@@ -23,7 +23,7 @@
   font-weight: 900;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
   .search-bar {
     margin: 0;
   }
