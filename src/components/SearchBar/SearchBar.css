@@ -3,7 +3,7 @@
 }
 
 .search-bar__input {
-  font-family: "Trebuchet MS";
+  font-family: "Rubik Medium";
   font-weight: 700;
   width: 200px;
   height: 30px;
@@ -13,7 +13,7 @@
 }
 
 .search-bar__btn {
-  font-family: "Trebuchet MS";
+  font-family: "Rubik Regular";
   background-color: #c70039;
   width: 40px;
   height: 34px;
@@ -21,6 +21,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #fff;
   font-weight: 900;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

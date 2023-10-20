@@ -6,6 +6,7 @@
   margin: 0;
   justify-content: space-between;
   align-items: center;
+  font-family: "Rubik Regular";
 }
 
 .footer__author {
@@ -20,8 +21,13 @@
 }
 
 .footer__link {
+  font-family: "Rubik Bold";
   text-decoration: none;
   color: #c70039;
+}
+
+.footer__link:hover {
+  color: rgba(99, 0, 57, 0.5);
 }
 
 .footer__link-icon {

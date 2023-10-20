@@ -12,9 +12,10 @@
   color: #c70039;
   cursor: pointer;
   font-size: 18px;
-  font-weight: 700;
+  /* font-weight: 700; */
   background-color: #fff;
   border: none;
+  font-family: "Rubik Bold";
 }
 
 .nav__link:hover {
