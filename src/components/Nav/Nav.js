@@ -2,8 +2,8 @@ import "./Nav.css";
 
 const Nav = ({ handleRandom, handleMainPage }) => {
   return (
-    <nav onClick={handleMainPage} className="nav">
-      <button className="nav__link" type="button">
+    <nav className="nav">
+      <button onClick={handleMainPage} className="nav__link" type="button">
         Home
       </button>
       <button onClick={handleRandom} className="nav__link" type="button">

@@ -1,17 +1,20 @@
 import Preloader from "../Preloader/Preloader";
 import { useContext } from "react";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
+import { IsLoadingContext } from "../../contexts/IsLoadingContext";
 import { useParams } from "react-router-dom";
-import getPokemon from "../../utils/api";
 import typeList from "../../utils/consts";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import "./Entry.css";
 
-const Entry = () => {
-  const [isLoading, setLoading] = useState(true);
-  const { poke, setPoke } = useContext(CurrentPokeContext);
+const Entry = ({ handleGetPokemon }) => {
+  const { loading } = useContext(IsLoadingContext);
+  const { poke } = useContext(CurrentPokeContext);
   const { id } = useParams();
+
+  useEffect(() => {
+    handleGetPokemon(id);
+  }, [id]);
 
   const getTotalStats = () => {
     let total = 0;
@@ -25,20 +28,9 @@ const Entry = () => {
     return word.charAt(0).toUpperCase() + word.slice(1);
   };
 
-  useEffect(() => {
-    getPokemon(id)
-      .then((res) => {
-        setPoke(res);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [id]);
-
   return (
     <div>
-      {isLoading ? (
+      {loading ? (
         <Preloader />
       ) : (
         <div className="entry">

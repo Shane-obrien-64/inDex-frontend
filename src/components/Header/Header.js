@@ -1,28 +1,10 @@
 import logo from "../../logo.svg";
 import Nav from "../Nav/Nav";
 import SearchBar from "../SearchBar/SearchBar";
-import getPokemon from "../../utils/api";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
 import "./Header.css";
 
-const Header = () => {
-  const { poke, setPoke } = useContext(CurrentPokeContext);
-  const navigate = useNavigate();
-
-  const handleGetPokemon = (value) => {
-    getPokemon(value)
-      .then((res) => {
-        navigate(`/entry/${value}`);
-        setPoke(res);
-      })
-      .catch((err) => {
-        console.error(err);
-        navigate("/error404");
-      });
-  };
-
+const Header = ({ handleGetPokemon, handleMainPage }) => {
   const handleSearchSubmit = (value) => {
     const id = value.toLowerCase();
     handleGetPokemon(id);
@@ -32,10 +14,6 @@ const Header = () => {
     const random = Math.random();
     const randomNumber = Math.floor(random * 1009) + 1;
     handleGetPokemon(randomNumber);
-  };
-
-  const handleMainPage = () => {
-    navigate("/");
   };
 
   return (
