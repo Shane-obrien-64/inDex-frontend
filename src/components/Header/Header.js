@@ -1,7 +1,6 @@
 import logo from "../../logo.svg";
 import Nav from "../Nav/Nav";
 import SearchBar from "../SearchBar/SearchBar";
-import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = ({ handleGetPokemon, handleMainPage }) => {
@@ -18,7 +17,12 @@ const Header = ({ handleGetPokemon, handleMainPage }) => {
 
   return (
     <header className="header">
-      <img className="header__logo" src={logo} onClick={handleMainPage}></img>
+      <img
+        className="header__logo"
+        src={logo}
+        alt="inDex logo"
+        onClick={handleMainPage}
+      ></img>
       <div className="header__divider">
         <Nav handleRandom={handleRandom} handleMainPage={handleMainPage} />
         <SearchBar handleSearchSubmit={handleSearchSubmit} />

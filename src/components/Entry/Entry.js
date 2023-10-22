@@ -14,7 +14,7 @@ const Entry = ({ handleGetPokemon }) => {
 
   useEffect(() => {
     handleGetPokemon(id);
-  }, [id]);
+  }, []);
 
   const getTotalStats = () => {
     let total = 0;
@@ -69,6 +69,7 @@ const Entry = ({ handleGetPokemon }) => {
                   />
                 );
               }
+              return null;
             })}
           </div>
 
