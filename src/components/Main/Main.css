@@ -5,9 +5,10 @@
 }
 
 .main__heading {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .main__text {
-  margin-bottom: 60px;
+  padding: 0 15px;
+  margin-bottom: 20px;
 }

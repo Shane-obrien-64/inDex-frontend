@@ -36,3 +36,9 @@
   margin: auto 10px;
   vertical-align: middle;
 }
+
+.footer__list-item {
+  display: flex;
+  align-items: center;
+  max-width: 120px;
+}

@@ -47,8 +47,8 @@ function App() {
               path="/entry/:id"
               element={<Entry handleGetPokemon={handleGetPokemon} />}
             />
-            <Route path="/" element={<Main />} />
             <Route path="/error404" element={<NotFound />} />
+            <Route path="/" element={<Main />} />
           </Routes>
           <Footer />
         </div>

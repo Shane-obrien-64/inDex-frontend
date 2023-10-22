@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.dac0144b.css",
-    "main.js": "/static/js/main.79621a9a.js",
-    "static/js/787.7917e1bd.chunk.js": "/static/js/787.7917e1bd.chunk.js",
-    "static/media/preloader.svg": "/static/media/preloader.323de4520da2577d49cb24263b710b74.svg",
-    "static/media/github_logo.svg": "/static/media/github_logo.6fa18895f6e6c7772cab7049f7e05f59.svg",
-    "index.html": "/index.html",
-    "static/media/linkden_icon.svg": "/static/media/linkden_icon.7f711a11017ceead8da316d1ee0c6ca7.svg",
-    "static/media/logo.svg": "/static/media/logo.941bbbcb2b4fee5a675bdb0d6af74097.svg",
-    "main.dac0144b.css.map": "/static/css/main.dac0144b.css.map",
-    "main.79621a9a.js.map": "/static/js/main.79621a9a.js.map",
-    "787.7917e1bd.chunk.js.map": "/static/js/787.7917e1bd.chunk.js.map"
+    "main.css": "/inDex-frontend/static/css/main.d99b38cf.css",
+    "main.js": "/inDex-frontend/static/js/main.31b09599.js",
+    "static/js/787.7917e1bd.chunk.js": "/inDex-frontend/static/js/787.7917e1bd.chunk.js",
+    "static/media/Rubik-Medium.woff": "/inDex-frontend/static/media/Rubik-Medium.398fa9b3278b6468b100.woff",
+    "static/media/Rubik-Bold.woff": "/inDex-frontend/static/media/Rubik-Bold.8d45d307f2235044fbfb.woff",
+    "static/media/Rubik-Regular.woff": "/inDex-frontend/static/media/Rubik-Regular.7b21eee0413d1421f233.woff",
+    "static/media/preloader.svg": "/inDex-frontend/static/media/preloader.323de4520da2577d49cb24263b710b74.svg",
+    "static/media/github_logo.svg": "/inDex-frontend/static/media/github_logo.6fa18895f6e6c7772cab7049f7e05f59.svg",
+    "index.html": "/inDex-frontend/index.html",
+    "static/media/linkden_icon.svg": "/inDex-frontend/static/media/linkden_icon.7f711a11017ceead8da316d1ee0c6ca7.svg",
+    "static/media/logo.svg": "/inDex-frontend/static/media/logo.941bbbcb2b4fee5a675bdb0d6af74097.svg",
+    "main.d99b38cf.css.map": "/inDex-frontend/static/css/main.d99b38cf.css.map",
+    "main.31b09599.js.map": "/inDex-frontend/static/js/main.31b09599.js.map",
+    "787.7917e1bd.chunk.js.map": "/inDex-frontend/static/js/787.7917e1bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dac0144b.css",
-    "static/js/main.79621a9a.js"
+    "static/css/main.d99b38cf.css",
+    "static/js/main.31b09599.js"
   ]
 }
