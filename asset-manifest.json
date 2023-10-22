@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c9055bf7.css",
-    "main.js": "/static/js/main.5779fef2.js",
+    "main.js": "/static/js/main.14abf9bc.js",
     "static/js/787.7917e1bd.chunk.js": "/static/js/787.7917e1bd.chunk.js",
     "static/media/Rubik-Medium.woff": "/static/media/Rubik-Medium.398fa9b3278b6468b100.woff",
     "static/media/Rubik-Bold.woff": "/static/media/Rubik-Bold.8d45d307f2235044fbfb.woff",
@@ -12,11 +12,11 @@
     "static/media/linkden_icon.svg": "/static/media/linkden_icon.7f711a11017ceead8da316d1ee0c6ca7.svg",
     "static/media/logo.svg": "/static/media/logo.941bbbcb2b4fee5a675bdb0d6af74097.svg",
     "main.c9055bf7.css.map": "/static/css/main.c9055bf7.css.map",
-    "main.5779fef2.js.map": "/static/js/main.5779fef2.js.map",
+    "main.14abf9bc.js.map": "/static/js/main.14abf9bc.js.map",
     "787.7917e1bd.chunk.js.map": "/static/js/787.7917e1bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9055bf7.css",
-    "static/js/main.5779fef2.js"
+    "static/js/main.14abf9bc.js"
   ]
 }
