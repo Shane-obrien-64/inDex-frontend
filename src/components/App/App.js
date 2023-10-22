@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContext";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
 import { useState } from "react";
-import { Route, Routes, Redirect } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
