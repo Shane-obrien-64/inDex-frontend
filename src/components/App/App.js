@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContext";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Redirect } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -43,12 +43,12 @@ function App() {
             handleMainPage={handleMainPage}
           />
           <Routes>
+            <Route path="*" element={<Main />} />
             <Route
               path="/entry/:id"
               element={<Entry handleGetPokemon={handleGetPokemon} />}
             />
             <Route path="/error404" element={<NotFound />} />
-            <Route path="/" element={<Main />} />
           </Routes>
           <Footer />
         </div>
