@@ -79,16 +79,12 @@ const Entry = ({ handleGetPokemon }) => {
               {poke.abilities.map((ability) => {
                 if (ability.is_hidden === true) {
                   return (
-                    <p key={ability.ability.name}>
+                    <p key={"hidden: " + ability.ability.name}>
                       Hidden: {ability.ability.name}
                     </p>
                   );
                 }
-                return (
-                  <p key={"hidden: " + ability.ability.name}>
-                    {ability.ability.name}
-                  </p>
-                );
+                return <p key={ability.ability.name}>{ability.ability.name}</p>;
               })}
             </div>
           </div>
