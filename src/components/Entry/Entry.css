@@ -1,11 +1,30 @@
-.entry {
+.entry__container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  margin: 100px auto;
+  margin: 20px auto 100px;
   max-width: 500px;
   max-height: 700px;
   gap: 5px;
+}
+
+.entry__buttons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  max-height: 700px;
+  margin: 100px auto 0;
+}
+
+.entry__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.entry__button:hover {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .entry__grid-item {

@@ -1,4 +1,6 @@
 import Preloader from "../Preloader/Preloader";
+import arrowLeft from "../../images/arrow-left.svg";
+import arrowRight from "../../images/arrow-right.svg";
 import { useContext } from "react";
 import { CurrentPokeContext } from "../../contexts/CurrentPokeContext";
 import { IsLoadingContext } from "../../contexts/IsLoadingContext";
@@ -15,6 +17,14 @@ const Entry = ({ handleGetPokemon }) => {
   useEffect(() => {
     handleGetPokemon(id);
   }, []);
+
+  const goToPrevious = () => {
+    handleGetPokemon(poke.id - 1);
+  };
+
+  const goToNext = () => {
+    handleGetPokemon(poke.id + 1);
+  };
 
   const getTotalStats = () => {
     let total = 0;
@@ -33,83 +43,97 @@ const Entry = ({ handleGetPokemon }) => {
       {loading ? (
         <Preloader />
       ) : (
-        <div className="entry">
-          <div className="entry__grid-item entry__title">
-            <h1 className="entry__title-name">{capitalizeWord(poke.name)}</h1>
-            <p className="entry__title-number">#{poke.id}</p>
-          </div>
-
-          <div className="entry__grid-item entry__sprites">
-            <img
-              className="entry__sprite"
-              src={poke.sprites.front_default}
-              alt={poke.name}
-            />
-            {poke.sprites.front_shiny !== null ? (
-              <img
-                className="entry__sprite"
-                src={poke.sprites.front_shiny}
-                alt={poke.name + " Shiny"}
-              />
-            ) : null}
-          </div>
-
-          <div className="entry__grid-item entry__types">
-            {poke.types.map((type) => {
-              const typeMatch = typeList.find(
-                (item) => item.name === type.type.name
-              );
-              if (typeMatch) {
-                return (
-                  <img
-                    className="entry__type-img"
-                    src={typeMatch.url}
-                    alt={typeMatch.name}
-                    key={typeMatch.name}
-                  />
-                );
-              }
-              return null;
-            })}
-          </div>
-
-          <div className="entry__grid-item entry__abilities">
-            <h3 className="entry__abilities_title">Abilities:</h3>
-            <div>
-              {poke.abilities.map((ability) => {
-                if (ability.is_hidden === true) {
-                  return (
-                    <p key={"hidden: " + ability.ability.name}>
-                      Hidden: {ability.ability.name}
-                    </p>
-                  );
-                }
-                return <p key={ability.ability.name}>{ability.ability.name}</p>;
-              })}
+        <div>
+          <div className="entry__buttons">
+            <div className="entry__button" onClick={goToPrevious}>
+              <label>#{poke.id - 1}</label>
+              <img className="" src={arrowLeft} alt="previous entry" />
+            </div>
+            <div className="entry__button" onClick={goToNext}>
+              <label>#{poke.id + 1}</label>
+              <img src={arrowRight} alt="next entry" />
             </div>
           </div>
+          <div className="entry__container">
+            <div className="entry__grid-item entry__title">
+              <h1 className="entry__title-name">{capitalizeWord(poke.name)}</h1>
+              <p className="entry__title-number">#{poke.id}</p>
+            </div>
 
-          <div className="entry__grid-item entry__hw">
-            <p>Height: {poke.height / 10}m</p>
-            <p>Weight: {poke.weight / 10}kg</p>
-          </div>
+            <div className="entry__grid-item entry__sprites">
+              <img
+                className="entry__sprite"
+                src={poke.sprites.front_default}
+                alt={poke.name}
+              />
+              {poke.sprites.front_shiny !== null ? (
+                <img
+                  className="entry__sprite"
+                  src={poke.sprites.front_shiny}
+                  alt={poke.name + " Shiny"}
+                />
+              ) : null}
+            </div>
 
-          <div className="entry__grid-item entry__stats">
-            <h2 className="entry__stats-label">Base stats:</h2>
-            <ul className="entry__stats-list">
-              <li className="entry__stat">
-                <div>Total:</div>
-                <div>{getTotalStats()}</div>
-              </li>
-              {poke.stats.map((stat) => {
-                return (
-                  <li className="entry__stat" key={stat.stat.name}>
-                    <div>{stat.stat.name}:</div>
-                    <div>{stat.base_stat}</div>
-                  </li>
+            <div className="entry__grid-item entry__types">
+              {poke.types.map((type) => {
+                const typeMatch = typeList.find(
+                  (item) => item.name === type.type.name
                 );
+                if (typeMatch) {
+                  return (
+                    <img
+                      className="entry__type-img"
+                      src={typeMatch.url}
+                      alt={typeMatch.name}
+                      key={typeMatch.name}
+                    />
+                  );
+                }
+                return null;
               })}
-            </ul>
+            </div>
+
+            <div className="entry__grid-item entry__abilities">
+              <h3 className="entry__abilities_title">Abilities:</h3>
+              <div>
+                {poke.abilities.map((ability) => {
+                  if (ability.is_hidden === true) {
+                    return (
+                      <p key={"hidden: " + ability.ability.name}>
+                        Hidden: {ability.ability.name}
+                      </p>
+                    );
+                  }
+                  return (
+                    <p key={ability.ability.name}>{ability.ability.name}</p>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="entry__grid-item entry__hw">
+              <p>Height: {poke.height / 10}m</p>
+              <p>Weight: {poke.weight / 10}kg</p>
+            </div>
+
+            <div className="entry__grid-item entry__stats">
+              <h2 className="entry__stats-label">Base stats:</h2>
+              <ul className="entry__stats-list">
+                <li className="entry__stat">
+                  <div>Total:</div>
+                  <div>{getTotalStats()}</div>
+                </li>
+                {poke.stats.map((stat) => {
+                  return (
+                    <li className="entry__stat" key={stat.stat.name}>
+                      <div>{stat.stat.name}:</div>
+                      <div>{stat.base_stat}</div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       )}
