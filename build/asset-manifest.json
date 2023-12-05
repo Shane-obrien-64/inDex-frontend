@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/inDex-frontend/static/css/main.f6bd89b2.css",
-    "main.js": "/inDex-frontend/static/js/main.19db3458.js",
+    "main.css": "/inDex-frontend/static/css/main.4b99f814.css",
+    "main.js": "/inDex-frontend/static/js/main.97dc1327.js",
     "static/js/787.7917e1bd.chunk.js": "/inDex-frontend/static/js/787.7917e1bd.chunk.js",
     "static/media/Rubik-Medium.woff": "/inDex-frontend/static/media/Rubik-Medium.398fa9b3278b6468b100.woff",
     "static/media/Rubik-Bold.woff": "/inDex-frontend/static/media/Rubik-Bold.8d45d307f2235044fbfb.woff",
@@ -11,12 +11,14 @@
     "index.html": "/inDex-frontend/index.html",
     "static/media/linkden_icon.svg": "/inDex-frontend/static/media/linkden_icon.7f711a11017ceead8da316d1ee0c6ca7.svg",
     "static/media/logo.svg": "/inDex-frontend/static/media/logo.941bbbcb2b4fee5a675bdb0d6af74097.svg",
-    "main.f6bd89b2.css.map": "/inDex-frontend/static/css/main.f6bd89b2.css.map",
-    "main.19db3458.js.map": "/inDex-frontend/static/js/main.19db3458.js.map",
+    "static/media/arrow-left.svg": "/inDex-frontend/static/media/arrow-left.846b4a5c955208a83dfcfc897f8c1662.svg",
+    "static/media/arrow-right.svg": "/inDex-frontend/static/media/arrow-right.6a32b04e8b052aea252c4d95fcb56c8a.svg",
+    "main.4b99f814.css.map": "/inDex-frontend/static/css/main.4b99f814.css.map",
+    "main.97dc1327.js.map": "/inDex-frontend/static/js/main.97dc1327.js.map",
     "787.7917e1bd.chunk.js.map": "/inDex-frontend/static/js/787.7917e1bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6bd89b2.css",
-    "static/js/main.19db3458.js"
+    "static/css/main.4b99f814.css",
+    "static/js/main.97dc1327.js"
   ]
 }

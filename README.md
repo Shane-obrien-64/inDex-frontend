@@ -15,3 +15,9 @@ inDex displays information from 1010 diferent pokemon. this information includes
 ## link to inDex
 
 https://shane-obrien-64.github.io/inDex-frontend/
+
+## Future Plans
+
+- Next arrows for display page
+- Ability description popups
+- Availible Move sets
